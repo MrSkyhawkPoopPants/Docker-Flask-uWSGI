@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+################################
+#   Setup flask container
+################################
+  apiserver:
+    build:
+      dockerfile: Dockerfile-prod
+    user: "112233" #arbitrary user id, use any number
+    ports:
+      - "127.0.0.1:6200:8080"
+    container_name: flask-uwgi
